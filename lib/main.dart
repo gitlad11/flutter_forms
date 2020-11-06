@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
                             headline6 : TextStyle(fontSize : 30.0, fontStyle: FontStyle.italic),
                             bodyText1 : TextStyle(fontSize: 14.0, fontFamily : 'Raleway')
                         )),
-      home: RegisterScreenState()
+      home: LoginScreenState()
     );
   }
 }
