@@ -2,6 +2,7 @@ import 'dart:async';
 
 import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
+import 'package:flutter_app/Screens/Sign_in.dart';
 
 class RegisterScreenState extends StatefulWidget {
   @override
@@ -123,39 +124,41 @@ class RegisterScreen extends State<RegisterScreenState>{
                     obscureText: true),
                 SizedBox(height: 30),
                 Container(height: 50,
-                          child: FlatButton(
-                              onPressed: (){
-                                    if(_formKey.currentState.validate()){
-                                      return;
-                                    }
-                              },
-                              padding: EdgeInsets.all(0),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(9),
-                            ),
-                            child: Ink(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    gradient: LinearGradient(
-                                      begin: Alignment.centerLeft,
-                                      end: Alignment.centerRight,
-                                      colors: [
-                                        Color(0xffff5f6d),
-                                        Color(0xffff5f6d),
-                                        Color(0xffffc371),
-                                      ],
-                                    ),
-                                  ),
-                              child: Container(
-                                alignment: Alignment.center,
-                                constraints: BoxConstraints(minHeight: 50, maxWidth: double.infinity),
-                                child: Text("Присоединиться",
-                                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-                                        textAlign: TextAlign.center),
+                    child: FlatButton(
+                      onPressed: (){
+                        if(_formKey.currentState.validate()){
+                          return;
+                        }
+                      },
+                      padding: EdgeInsets.all(0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(9),
+                      ),
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                              Color(0xffff5f6d),
+                              Color(0xffff5f6d),
+                              Color(0xffffc371),
+                            ],
+                          ),
+                        ),
+                        child: Container(
+                            alignment: Alignment.center,
+                            constraints: BoxConstraints(minHeight: 50, maxWidth: double.infinity),
+                            child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(Icons.assignment_turned_in, color : Colors.white),
+                                Text(" Присоедениться", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center)
+                              ],)
 
-                              ),
-                            ),
-                          )
+                        ),
+                      ),
+                    )
                 ),
         SizedBox(height: 14),
         Container(height: 50, width: double.infinity,
@@ -171,8 +174,8 @@ class RegisterScreen extends State<RegisterScreenState>{
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                         colors: [
-                          Colors.indigoAccent,
-                          Colors.indigoAccent,
+                          Colors.indigo,
+                          Colors.indigo,
                           Color(0xffff5f6d),
                         ]
                     )
@@ -196,7 +199,7 @@ class RegisterScreen extends State<RegisterScreenState>{
                       children: <Widget>[
                         Text("Уже есть профиль?",style: TextStyle(fontWeight: FontWeight.bold)),
                         GestureDetector(
-                          onTap: (){},
+                          onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreenState()));},
                           child: Text("  Войти", style : TextStyle( fontSize: 18, fontWeight: FontWeight.bold, color: Colors.redAccent)),
                         )
                       ],

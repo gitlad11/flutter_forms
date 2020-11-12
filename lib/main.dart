@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/Screens/Sign_in.dart';
 import 'package:flutter_app/Screens/Sign_up.dart';
 import 'package:flutter_app/Screens/Forgot_password.dart';
+import 'package:flutter_app/Screens/App_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
                             headline6 : TextStyle(fontSize : 30.0, fontStyle: FontStyle.italic),
                             bodyText1 : TextStyle(fontSize: 14.0, fontFamily : 'Raleway')
                         )),
-      home: LoginScreenState()
+      home: AppScreen()
     );
   }
 }

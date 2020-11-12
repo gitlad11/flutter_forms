@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Screens/Sign_up.dart';
+import 'package:flutter_app/Screens/Forgot_password.dart';
 
 import '../color_theme.dart';
 
@@ -96,7 +97,10 @@ class LoginScreen extends State<LoginScreenState> {
                  ),
                   SizedBox(height: 12,),
                   Align(alignment: Alignment.topRight,
-                        child: Text("забыли пароль?", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600))
+                        child: GestureDetector(
+                            onTap : (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPasswordState()));  },
+                            child: Text("забыли пароль?", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600))
+                        )
                   ),
                   SizedBox(height: 30),
                   Container(
@@ -150,8 +154,8 @@ class LoginScreen extends State<LoginScreenState> {
                                           begin: Alignment.centerLeft,
                                           end: Alignment.centerRight,
                                           colors: [
-                                            Colors.indigoAccent,
-                                            Colors.indigoAccent,
+                                            Colors.indigo,
+                                            Colors.indigo,
                                             Color(0xffff5f6d),
                                             ]
                                         )
@@ -176,7 +180,7 @@ class LoginScreen extends State<LoginScreenState> {
                           children: <Widget>[
                             Text("Создать новый профиль", style: TextStyle(fontWeight: FontWeight.bold)),
                             GestureDetector(
-                              onTap : (){  },
+                              onTap : (){ Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreenState()));  },
                               child: Text("  Регистрация", style: TextStyle( fontSize: 18, fontWeight: FontWeight.bold, color: Colors.redAccent)),
                             )
                           ],
